@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('products.index');
-});
+Route::get('/', [
+    'uses' => 'ProductsController@getProducts',
+    'as' => 'products.index'
+]);
 
 Auth::routes();
 
